@@ -17,7 +17,7 @@ class FsWebCam(UserRoutine): #Extend routine
 	
 	def image(self):
 		captureImageCommand = ShellCommand(self.getConnection())
-
+		captureImageCommand.disableCommunication(True)
 		tmpFile = self.tempImageFilename()
 
 		captureImageCommand.setArguments(command = '/usr/bin/fswebcam', args = [tmpFile])
